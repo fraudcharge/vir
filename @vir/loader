@@ -1,39 +1,25 @@
--- Loader.lua
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/main/%40vir/Library.lua"))()
+local library = loadstring(
+    game:HttpGet(
+        'https://raw.githubusercontent.com/fraudcharge/vir/main/@vir/Library.lua'
+    )
+)()
 
-local games = "https://raw.githubusercontent.com/fraudcharge/games/refs/heads/main/119048529960596"
+-- Direct file URL for this game
+local game_file =
+    'https://raw.githubusercontent.com/fraudcharge/vira/refs/heads/main/games/119048529960596'
 
-local local_player = cloneref(game:GetService("Players").LocalPlayer)
-local market = cloneref(game:GetService("MarketplaceService"))
+local local_player = cloneref(game:GetService('Players').LocalPlayer)
+local market = cloneref(game:GetService('MarketplaceService'))
 local info = market:GetProductInfo(game.PlaceId)
 
--- Function to check if game is supported
-function check_supported()
-    local success, result = pcall(function()
-        return game:HttpGet(games.."/"..game.PlaceId..".lua")
-    end)
-    if not success or result == "404: Not Found" then
-        library:Notify("Unsupported Game: "..info.Name.." If You Want It Supported Join The Discord Copied To Your Clipboard")
-        setclipboard("https://discord.gg/wdhc")
-    end
+-- Executor check
+if getthreadcontext() <= 7 then
+    local_player:Kick(
+        identifyexecutor()
+            .. ' Is Not Supported. You are not banned, just a kick message.'
+    )
 end
 
--- Check executor
-if getthreadcontext() > 7 then
-    print("Executor Supported")
-else
-    local_player:Kick(identifyexecutor().." Is Not Supported. You Are Not Banned, This Is Just A Kick Message Because Your Executor Is Not Supported")
-end
-
--- Example hardcoded game support (optional)
--- Replace with the correct PlaceId if needed
-if game.PlaceId == 119048529960596 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/games/refs/heads/main/119048529960596"))()
-    library:Notify("Supported Game Loading: "..info.Name)
-    return
-end
-
--- Fallback to dynamic loader
-check_supported()
-loadstring(game:HttpGet(games.."/"..game.PlaceId..".lua"))()
-library:Notify("Supported Game Loading: "..info.Name)
+-- Load the specific game script
+loadstring(game:HttpGet(game_file))()
+library:Notify('Supported Game Loading: ' .. info.Name)
