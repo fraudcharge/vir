@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/refs/heads/main/%40vir/Library.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/main/%40vir/Library.lua"))()
 
 local local_player = cloneref(game:GetService("Players").LocalPlayer)
 local market = cloneref(game:GetService("MarketplaceService"))
