@@ -1,7 +1,7 @@
 -- Loader.lua
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/main/%40vir/Library.lua"))()
 
-local games = "https://raw.githubusercontent.com/fraudcharge/vir/main/%40vir/Games"
+local games = "https://raw.githubusercontent.com/fraudcharge/vir/refs/heads/main/%40vir/119048529960596"
 
 local local_player = cloneref(game:GetService("Players").LocalPlayer)
 local market = cloneref(game:GetService("MarketplaceService"))
@@ -28,7 +28,7 @@ end
 -- Example hardcoded game support (optional)
 -- Replace with the correct PlaceId if needed
 if game.PlaceId == 119048529960596 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/main/%40vir/Games/119048529960596.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/refs/heads/main/%40vir/119048529960596"))()
     library:Notify("Supported Game Loading: "..info.Name)
     return
 end
