@@ -10,7 +10,7 @@ function check_supported()
     end)
     if not success or result == "404: Not Found" then
         library:Notify("Unsupported Game: "..info.Name.." If You Want It Supported Join The Discord Copied To Your Clipboard")
-        setclipboard("https://discord.gg/SUTpER4dNc")
+        setclipboard("https://discord.gg/wdhc")
     end
 end
 
