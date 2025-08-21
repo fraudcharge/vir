@@ -1,6 +1,4 @@
-local library = loadstring(game:HttpGet(""))()
-
-local games = ""
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/refs/heads/main/%40vir/Library.lua"))()
 
 local local_player = cloneref(game:GetService("Players").LocalPlayer)
 local market = cloneref(game:GetService("MarketplaceService"))
@@ -23,7 +21,7 @@ else
 end
 
 if game.GameId == 7546582051 and not game.PlaceId == 94845773826960 then
-    loadstring(game:HttpGet(""))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fraudcharge/vir/refs/heads/main/%40vir/restaurant%20tycoon%203"))()
     library:Notify("Supported Game Loading: "..info.Name)
     return
 end
