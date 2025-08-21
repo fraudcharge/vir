@@ -258,7 +258,7 @@ local watermark_connection = run_service.RenderStepped:Connect(function()
         FrameCounter = 0;
     end;
 
-    library:SetWatermark(('Astolfo Ware | %s fps | %s ms | game: ' .. info.Name .. ''):format(
+    library:SetWatermark(('@vir | %s fps | %s ms | game: ' .. info.Name .. ''):format(
         math.floor(FPS),
         math.floor(stats.Network.ServerStatsItem['Data Ping']:GetValue())
     ));
